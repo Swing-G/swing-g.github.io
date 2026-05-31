@@ -53,22 +53,59 @@ document.addEventListener('DOMContentLoaded', function () {
             cursorChar: '|',
             onComplete: function () {
                 setTimeout(function () {
-                    const terminal = document.getElementById('terminal');
-                    if (terminal) {
-                        terminal.style.transition = 'opacity 0.4s ease, max-height 0.4s ease';
-                        terminal.style.maxHeight = terminal.offsetHeight + 'px';
-                        requestAnimationFrame(function () {
-                            terminal.style.opacity = '0';
-                            terminal.style.maxHeight = '0';
-                            terminal.style.overflow = 'hidden';
-                            terminal.style.marginBottom = '0';
-                        });
+                    const hint = document.querySelector('.scroll-hint');
+                    if (hint) {
+                        hint.classList.add('visible');
                     }
-                }, 800);
+                }, 400);
             }
         };
         new Typed('#typed', options);
     }
+});
+
+// === Navigation Click-to-Scroll ===
+document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            const targetId = item.getAttribute('data-target');
+            if (!targetId) return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
+
+// === Intersection Observer — Active Nav Highlight ===
+document.addEventListener('DOMContentLoaded', function () {
+    const screens = document.querySelectorAll('.screen');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    if (!screens.length || !navItems.length) return;
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                const id = '#' + entry.target.id;
+                navItems.forEach(function (item) {
+                    if (item.getAttribute('data-target') === id) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    screens.forEach(function (screen) {
+        observer.observe(screen);
+    });
 });
 
 // === GitHub Stats ===
