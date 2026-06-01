@@ -56,7 +56,7 @@ body {
     padding: 60px 24px;
 }
 .screen-wide {
-    max-width: 960px;
+    max-width: 1050px;
 }
 
 /* === Typography === */
@@ -287,12 +287,12 @@ a:hover { text-decoration: underline; }
 .bento-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 14px;
+    gap: 18px;
 }
 .bento-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     aspect-ratio: 16 / 9;
     display: flex;
@@ -301,8 +301,8 @@ a:hover { text-decoration: underline; }
     cursor: default;
 }
 .bento-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 .bento-img {
     background: var(--code-bg);
@@ -312,33 +312,33 @@ a:hover { text-decoration: underline; }
 }
 .bento-img-placeholder {
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: 14px;
 }
 .bento-body {
-    padding: 12px 14px;
+    padding: 16px 18px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.bento-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
-.bento-body h3 { font-size: 15px; margin-bottom: 2px; }
-.bento-body p { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; line-height: 1.35; }
+.bento-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+.bento-body h3 { font-size: 17px; margin-bottom: 4px; }
+.bento-body p { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.4; }
 
 /* Tags */
 .bento-tags {
-    display: flex; flex-wrap: wrap; gap: 4px;
-    margin-bottom: 4px;
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-bottom: 6px;
 }
 .bento-tags span {
-    font-size: 10px;
+    font-size: 11px;
     background: var(--code-bg);
     padding: 2px 8px;
     border-radius: 4px;
     color: var(--text-secondary);
     font-family: "SF Mono", "Fira Code", monospace;
 }
-.bento-links { display: flex; gap: 12px; font-size: 12px; margin-top: auto; }
+.bento-links { display: flex; gap: 14px; font-size: 13px; margin-top: auto; }
 
 /* Source Tags */
 .source-tag {
@@ -347,12 +347,18 @@ a:hover { text-decoration: underline; }
     padding: 1px 8px;
     border-radius: 10px;
     margin-left: 6px;
-    background: var(--code-bg);
-    color: var(--text-muted);
+}
+.source-tag.source-personal {
+    background: #dbeafe;
+    color: #2563eb;
 }
 .source-tag.source-lab {
     background: #ede9fe;
     color: #7c3aed;
+}
+.source-tag.source-new {
+    background: #fef3c7;
+    color: #b45309;
 }
 
 /* ============================================
@@ -375,6 +381,13 @@ a:hover { text-decoration: underline; }
 .os-name { font-weight: 600; }
 .os-stars { font-size: 13px; color: var(--text-secondary); }
 .os-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6; }
+.os-card-new {
+    border-style: dashed;
+    border-color: #d1d5db;
+    background: transparent;
+}
+.os-card-new .os-name { color: var(--text-muted); }
+.os-card-new p { color: var(--text-muted); }
 .github-stats { text-align: center; margin-top: 8px; }
 .github-stats img { max-width: 100%; }
 
