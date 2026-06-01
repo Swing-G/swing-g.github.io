@@ -128,6 +128,8 @@ a:hover { text-decoration: underline; }
 /* Terminal */
 .terminal-window {
     width: 100%;
+    max-width: 520px;
+    margin: 8px auto 0;
     background: #1e1e1e;
     border-radius: var(--radius);
     overflow: hidden;
@@ -282,12 +284,12 @@ a:hover { text-decoration: underline; }
 .bento-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
+    gap: 12px;
 }
 .bento-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: default;
@@ -300,33 +302,33 @@ a:hover { text-decoration: underline; }
 .bento-col1 { grid-column: span 1; }
 .bento-img {
     background: var(--code-bg);
-    height: 120px;
+    height: 80px;
     display: flex; align-items: center; justify-content: center;
 }
-.bento-col2 .bento-img { height: 160px; }
+.bento-col2 .bento-img { height: 100px; }
 .bento-img-placeholder {
     color: var(--text-muted);
-    font-size: 13px;
+    font-size: 12px;
 }
-.bento-body { padding: 18px; }
-.bento-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
-.bento-body h3 { margin-bottom: 6px; }
-.bento-body p { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5; }
+.bento-body { padding: 14px; }
+.bento-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+.bento-body h3 { font-size: 15px; margin-bottom: 4px; }
+.bento-body p { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.45; }
 
 /* Tags */
 .bento-tags {
-    display: flex; flex-wrap: wrap; gap: 6px;
-    margin-bottom: 10px;
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-bottom: 8px;
 }
 .bento-tags span {
-    font-size: 11px;
+    font-size: 10px;
     background: var(--code-bg);
     padding: 2px 8px;
     border-radius: 4px;
     color: var(--text-secondary);
     font-family: "SF Mono", "Fira Code", monospace;
 }
-.bento-links { display: flex; gap: 16px; font-size: 13px; }
+.bento-links { display: flex; gap: 14px; font-size: 12px; }
 
 /* Source Tags */
 .source-tag {
