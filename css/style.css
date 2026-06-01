@@ -12,7 +12,7 @@
     --card-bg: #fff;
     --code-bg: #f5f5f5;
     --radius: 8px;
-    --max-width: 820px;
+    --max-width: 900px;
     --nav-width: 120px;
 }
 
@@ -26,7 +26,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
-    font-size: 15px;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -57,10 +57,10 @@ body {
 }
 
 /* === Typography === */
-h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; }
+h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; }
 h2 {
     font-family: "SF Mono", "Fira Code", "Consolas", monospace;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -112,8 +112,8 @@ a:hover { text-decoration: underline; }
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto;
 }
-.hero-tagline { font-size: 18px; color: var(--text); }
-.hero-sub { font-size: 14px; color: var(--text-secondary); }
+.hero-tagline { font-size: 20px; color: var(--text); }
+.hero-sub { font-size: 15px; color: var(--text-secondary); }
 .hero-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .hero-link {
     font-size: 13px;
@@ -284,7 +284,7 @@ a:hover { text-decoration: underline; }
 .bento-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
+    gap: 14px;
 }
 .bento-card {
     background: var(--card-bg);
@@ -302,33 +302,33 @@ a:hover { text-decoration: underline; }
 .bento-col1 { grid-column: span 1; }
 .bento-img {
     background: var(--code-bg);
-    height: 80px;
+    height: 56px;
     display: flex; align-items: center; justify-content: center;
 }
-.bento-col2 .bento-img { height: 100px; }
+.bento-col2 .bento-img { height: 70px; }
 .bento-img-placeholder {
     color: var(--text-muted);
     font-size: 12px;
 }
-.bento-body { padding: 14px; }
+.bento-body { padding: 12px; }
 .bento-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
-.bento-body h3 { font-size: 15px; margin-bottom: 4px; }
-.bento-body p { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.45; }
+.bento-body h3 { font-size: 16px; margin-bottom: 3px; }
+.bento-body p { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.4; }
 
 /* Tags */
 .bento-tags {
-    display: flex; flex-wrap: wrap; gap: 4px;
-    margin-bottom: 8px;
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-bottom: 6px;
 }
 .bento-tags span {
-    font-size: 10px;
+    font-size: 11px;
     background: var(--code-bg);
     padding: 2px 8px;
     border-radius: 4px;
     color: var(--text-secondary);
     font-family: "SF Mono", "Fira Code", monospace;
 }
-.bento-links { display: flex; gap: 14px; font-size: 12px; }
+.bento-links { display: flex; gap: 14px; font-size: 13px; }
 
 /* Source Tags */
 .source-tag {
