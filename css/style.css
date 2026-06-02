@@ -315,8 +315,8 @@ a:hover { text-decoration: underline; }
 }
 .link-tag:hover { opacity: 0.85; text-decoration: none; }
 .link-github {
-    background: #374151;
-    color: #fff;
+    background: #f1f5f9;
+    color: #334155;
 }
 .link-demo {
     background: #f0fdf4;
