@@ -287,6 +287,7 @@ a:hover { text-decoration: underline; }
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 20px;
+    position: relative;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: default;
 }
@@ -294,8 +295,18 @@ a:hover { text-decoration: underline; }
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
-.project-card h3, .os-card h3 { font-size: 17px; margin-bottom: 4px; }
+.project-card h3, .os-card h3 { font-size: 17px; margin-bottom: 4px; padding-right: 80px; }
 .project-card p, .os-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5; }
+
+/* Top-right stat badge */
+.card-stat {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
 
 .card-meta {
     font-size: 12px; color: var(--text-muted);
@@ -307,15 +318,20 @@ a:hover { text-decoration: underline; }
 /* Link Tags (GitHub / Demo) */
 .link-tag {
     font-size: 10px;
-    font-weight: 500;
+    font-weight: 600;
     padding: 1px 8px;
     border-radius: 10px;
     text-decoration: none;
     font-family: "SF Mono", "Fira Code", monospace;
 }
+.link-tag::after {
+    content: ' ↗';
+    font-size: 9px;
+    opacity: 0.7;
+}
 .link-tag:hover { opacity: 0.85; text-decoration: none; }
 .link-github {
-    background: #f1f5f9;
+    background: #dddfe1;
     color: #334155;
 }
 .link-demo {
@@ -338,6 +354,7 @@ a:hover { text-decoration: underline; }
 }
 .bento-tags span {
     font-size: 11px;
+    font-weight: 600;
     background: var(--code-bg);
     padding: 2px 8px;
     border-radius: 4px;
@@ -348,7 +365,7 @@ a:hover { text-decoration: underline; }
 /* Source Tags */
 .source-tag {
     font-size: 10px;
-    font-weight: 500;
+    font-weight: 600;
     padding: 1px 8px;
     border-radius: 10px;
     margin-left: 6px;
@@ -369,14 +386,26 @@ a:hover { text-decoration: underline; }
 /* ============================================
    Open Source (uses unified card styles above)
    ============================================ */
-.github-stats { text-align: center; margin-top: 8px; }
-.github-stats img { max-width: 100%; }
+.gh-chart {
+    margin-top: 16px;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
+.gh-chart img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
 
 /* ============================================
    Status Badges
    ============================================ */
 .status-pending {
     font-size: 11px;
+    font-weight: 600;
     background: #fef3c7;
     color: #92400e;
     padding: 2px 10px;
@@ -384,6 +413,7 @@ a:hover { text-decoration: underline; }
 }
 .status-done {
     font-size: 11px;
+    font-weight: 600;
     background: #d1fae5;
     color: #065f46;
     padding: 2px 10px;

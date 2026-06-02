@@ -20,6 +20,10 @@
             <span class="nav-label">技术</span>
             <span class="nav-bar"></span>
         </button>
+        <button class="nav-item" data-target="#experience">
+            <span class="nav-label">实习</span>
+            <span class="nav-bar"></span>
+        </button>
         <button class="nav-item" data-target="#projects">
             <span class="nav-label">项目</span>
             <span class="nav-bar"></span>
@@ -30,10 +34,6 @@
         </button>
         <button class="nav-item" data-target="#research">
             <span class="nav-label">论文</span>
-            <span class="nav-bar"></span>
-        </button>
-        <button class="nav-item" data-target="#experience">
-            <span class="nav-label">实习</span>
             <span class="nav-bar"></span>
         </button>
         <button class="nav-item" data-target="#blog">
@@ -103,7 +103,25 @@
             </div>
         </section>
 
-        <!-- ===== Screen 3: Projects ===== -->
+        <!-- ===== Screen 3: Experience ===== -->
+        <section id="experience" class="screen">
+            <div class="screen-inner">
+                <h2>// Experience</h2>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <span class="exp-company">歌尔 Alpha Labs</span>
+                        <span class="exp-date">2026.04 - 2026.05</span>
+                    </div>
+                    <p class="exp-role">AI Agent 研发实习生</p>
+                    <p class="exp-desc">参与技术成果智能管理平台升级，围绕安全RAG、智能Agent与知识图谱能力建设。</p>
+                    <div class="bento-tags">
+                        <span>RAG</span><span>Agent</span><span>知识图谱</span><span>PG-RLS</span><span>Function Calling</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Screen 4: Projects ===== -->
         <section id="projects" class="screen">
             <div class="screen-inner">
                 <h2>// Projects</h2>
@@ -155,13 +173,13 @@
                         </div>
                         <p>基于深度学习的悬浮物检测算法，水样图像杂质识别与分类</p>
                         <div class="bento-tags">
-                            <span>Python</span><span>目标检测</span><span>OpenCV</span><span>YOLO</span>
+                            <span>Python</span><span>目标检测</span><span>OpenCV</span><span>DETR</span>
                         </div>
                     </div>
                     <div class="project-card card-placeholder">
                         <h3>新的项目正在 Coding……</h3>
                         <div class="card-meta">
-                            <span class="source-tag source-new">敬请期待</span>
+                            <span class="source-tag source-new">Coming Soon</span>
                         </div>
                         <p>下一个项目会是什么？一个 Skill？一个 MCP Server？还是一个 Agent 框架？</p>
                         <div class="bento-tags">
@@ -178,13 +196,15 @@
                 <h2>// Open Source</h2>
                 <div class="os-grid">
                     <div class="os-card">
+                        <span class="card-stat">8.1k ⭐</span>
                         <h3>GitMCP</h3>
                         <div class="card-meta">
-                            <span>8.1k ⭐</span>
+                            <span>Pull requests</span>
                             <a href="https://github.com/anthropics/git-mcp" class="link-tag link-github" target="_blank" rel="noopener noreferrer">GitHub</a>
                             <a href="https://github.com/idosal/git-mcp/pull/247" class="link-tag status-pending">PR 已提交</a>
                         </div>
                         <p>贡献 Zed Editor 支持与编辑器接入规范，统一 UI 展示与配置结构</p>
+                        <div class="bento-tags"><span>MCP</span><span>Git</span><span>Agent</span><span>TypeScript</span></div>
                     </div>
                     <div class="os-card">
                         <h3>Prism 棱镜</h3>
@@ -207,12 +227,14 @@
                     <div class="os-card card-placeholder">
                         <h3>新的项目正在 Coding……</h3>
                         <div class="card-meta">
-                            <span class="source-tag source-new">敬请期待</span>
+                            <span class="source-tag source-new">Coming Soon</span>
                         </div>
                         <p>保持开放，持续构建。下一个项目已经在路上</p>
                     </div>
                 </div>
-                <div class="github-stats" id="github-stats"></div>
+                <div class="gh-chart">
+                    <img src="https://ghchart.rshah.org/Swing-G" alt="GitHub contributions" loading="lazy">
+                </div>
             </div>
         </section>
 
@@ -228,24 +250,6 @@
                     <div class="paper-item">
                         <div class="paper-title">多模态情绪识别</div>
                         <div class="paper-meta"><span class="status-done">中文期刊已录用</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== Screen 6: Experience ===== -->
-        <section id="experience" class="screen">
-            <div class="screen-inner">
-                <h2>// Experience</h2>
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <span class="exp-company">歌尔 Alpha Labs</span>
-                        <span class="exp-date">2026.04 - 2026.05</span>
-                    </div>
-                    <p class="exp-role">AI Agent 研发实习生</p>
-                    <p class="exp-desc">参与技术成果智能管理平台升级，围绕安全RAG、智能Agent与知识图谱能力建设。</p>
-                    <div class="bento-tags">
-                        <span>RAG</span><span>Agent</span><span>知识图谱</span><span>PG-RLS</span><span>Function Calling</span>
                     </div>
                 </div>
             </div>

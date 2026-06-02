@@ -108,14 +108,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// === GitHub Stats ===
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('github-stats');
-    if (!container) return;
-    const img = document.createElement('img');
-    img.src = 'https://github-readme-stats.vercel.app/api?username=Swing-G&show_icons=true&hide_title=true&hide_border=true&bg_color=fafafa&text_color=1a1a1a&icon_color=2563eb';
-    img.alt = 'GitHub Stats';
-    img.loading = 'lazy';
-    img.style.maxWidth = '100%';
-    container.appendChild(img);
-});
