@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="王烁 — AI Agent / 后端开发工程师">
+    <meta name="description" content="王烁 — AI Agent / 后端开发">
     <title>王烁 | AI Agent Engineer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <div id="particles"></div>
 
     <!-- Side Navigation -->
     <nav class="side-nav" aria-label="页面导航">
@@ -51,13 +53,12 @@
 
         <!-- ===== Screen 1: Landing (Hero + Terminal) ===== -->
         <section id="landing" class="screen">
-            <div id="particles"></div>
             <div class="landing-content">
                 <div class="hero-avatar">
                     <div class="avatar-placeholder">WS</div>
                 </div>
                 <h1>王烁</h1>
-                <p class="hero-tagline">AI Agent / 后端开发工程师</p>
+                <p class="hero-tagline">AI Agent / 后端开发</p>
                 <p class="hero-sub">中国石油大学（华东） 软件工程硕士 · 2027 届</p>
                 <div class="hero-links">
                     <a href="mailto:wangshuoyf@163.com" class="hero-link">wangshuoyf@163.com</a>
@@ -259,20 +260,30 @@
         <section id="blog" class="screen">
             <div class="screen-inner">
                 <h2>// Blog</h2>
-                <div class="blog-grid">
-                    <a href="https://blog.csdn.net/m0_58782205" target="_blank" rel="noopener noreferrer" class="blog-card">
-                        <span class="blog-platform">CSDN</span>
-                        <span class="blog-stat">20w+ 阅读</span>
-                        <span class="blog-arrow">→</span>
-                    </a>
-                    <span class="blog-card">
-                        <span class="blog-platform">掘金</span>
-                        <span class="blog-arrow">→</span>
-                    </span>
-                    <span class="blog-card">
-                        <span class="blog-platform">腾讯云开发者</span>
-                        <span class="blog-arrow">→</span>
-                    </span>
+                <div class="blog-strip" id="blog-csdn">
+                    <div class="blog-cover">
+                        <span class="blog-badge">CSDN</span>
+                        <img id="blog-cover-img" src="" alt="文章封面" />
+                    </div>
+                    <div class="blog-list" id="blog-list">
+                        <span class="blog-loading">加载中…</span>
+                    </div>
+                </div>
+                <div class="blog-strip blog-strip-soon">
+                    <div class="blog-cover">
+                        <span class="blog-badge">掘金</span>
+                    </div>
+                    <div class="blog-list">
+                        <span class="blog-soon-text">即将上线</span>
+                    </div>
+                </div>
+                <div class="blog-strip blog-strip-soon">
+                    <div class="blog-cover">
+                        <span class="blog-badge">腾讯云</span>
+                    </div>
+                    <div class="blog-list">
+                        <span class="blog-soon-text">即将上线</span>
+                    </div>
                 </div>
             </div>
         </section>
