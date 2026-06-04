@@ -108,65 +108,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// === Blog Articles Loader ===
+// === Blog Timeline Loader ===
 document.addEventListener('DOMContentLoaded', function () {
-    var listEl = document.getElementById('blog-list');
-    var coverImg = document.getElementById('blog-cover-img');
-    if (!listEl || !coverImg) return;
+    var tl = document.getElementById('blog-timeline');
+    if (!tl) return;
 
-    function loadArticles(path) {
-        fetch(path)
-            .then(function (res) {
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                return res.json();
-            })
-            .then(function (articles) {
-                if (!articles.length || !articles[0].title || articles[0].title === '未命名文章') {
-                    listEl.innerHTML = '<span class="blog-soon-text">暂无文章</span>';
-                    return;
-                }
-                listEl.innerHTML = '';
-                showCover(coverImg, articles[0].coverImage);
-
-                articles.forEach(function (article, index) {
-                    var item = document.createElement('div');
-                    item.className = 'blog-item' + (index === 0 ? ' active' : '');
-                    item.innerHTML =
-                        '<div class="blog-item-title">' + escapeHtml(article.title) + '</div>' +
-                        '<div class="blog-item-desc">' + escapeHtml(article.description) + '</div>';
-
-                    item.addEventListener('click', function () {
-                        if (article.link) window.open(article.link, '_blank', 'noopener noreferrer');
-                    });
-                    item.addEventListener('mouseenter', function () {
-                        var items = listEl.querySelectorAll('.blog-item');
-                        items.forEach(function (el) { el.classList.remove('active'); });
-                        item.classList.add('active');
-                        showCover(coverImg, article.coverImage);
-                    });
-                    listEl.appendChild(item);
-                });
-            })
-            .catch(function () {
-                // Fallback: try alternate path
-                if (path === '/csdn_articles.json') {
-                    loadArticles('csdn_articles.json');
-                } else {
-                    listEl.innerHTML = '<span class="blog-soon-text">加载失败</span>';
-                }
+    function renderTimeline(articles) {
+        if (!articles.length) {
+            tl.innerHTML = '<span class="blog-soon-text">暂无文章</span>';
+            return;
+        }
+        tl.innerHTML = '';
+        articles.forEach(function (a) {
+            var item = document.createElement('div');
+            item.className = 'blog-tl-item';
+            var dateStr = a.date || '';
+            item.innerHTML =
+                '<span class="blog-tl-dot"></span>' +
+                '<span class="blog-tl-text">' +
+                '<div class="blog-tl-title">' + escapeHtml(a.title) + '</div>' +
+                '<div class="blog-tl-desc">' + escapeHtml(a.description) + '</div>' +
+                '</span>' +
+                (dateStr ? '<span class="blog-tl-date">' + escapeHtml(dateStr) + '</span>' : '');
+            item.addEventListener('click', function () {
+                if (a.link) window.open(a.link, '_blank', 'noopener noreferrer');
             });
+            tl.appendChild(item);
+        });
     }
 
-    loadArticles('/csdn_articles.json');
-
-    function showCover(img, src) {
-        if (src) {
-            img.src = src;
-        } else {
-            img.src = 'data:image/svg+xml,' + encodeURIComponent(
-                '<svg xmlns="http://www.w3.org/2000/svg" width="260" height="180" fill="%23f5f5f5"><rect width="260" height="180"/><text x="130" y="95" text-anchor="middle" fill="%23999" font-size="14" font-family="sans-serif">CSDN</text></svg>'
-            );
-        }
+    var isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    if (isLocal) {
+        renderTimeline([
+            { title: '智能体时代的降维打击：这5种工作流模式你认识几个？', description: '本文深入探讨了AI Agentic时代的Workflow与Agent演进，对比了两种核心模式的适配差异，并重点拆解了5大经典Agentic Workflow模式', link: 'https://blog.csdn.net/m0_58782205/article/details/161367378', date: '05-28' },
+            { title: 'GPT-6与DeepSeek V4巅峰对决：AI行业迎来全新变革', description: '2026年4月，AI领域迎来史诗级对决：OpenAI推出代号"土豆"的GPT-6，投入20亿美元打造AGI终极武器，采用革命性Symphony架构', link: 'https://blog.csdn.net/m0_58782205/article/details/159964745', date: '04-24' },
+            { title: '龙虾智能体不是玩具！国家安全部提醒：这3个防护步骤必做', description: 'OpenClaw（"龙虾"）作为2026年现象级开源AI智能体，凭借自主执行任务、插件扩展和持续进化的特性迅速流行', link: 'https://blog.csdn.net/m0_58782205/article/details/159172563', date: '04-18' },
+            { title: 'Spring AI 1.0 正式发布：Java 开发者的 AI 原生时代来了', description: 'Spring AI 从孵化器毕业正式发布 1.0 版本，为 Java 生态带来完整的 AI 集成能力，包括 Chat、Embedding、Vector Store 等核心模块', link: 'https://blog.csdn.net/m0_58782205', date: '03-12' },
+            { title: '从零构建一个 MCP Server：让 LLM 也能调用你的工具', description: '手把手教你用 Java/Spring Boot 构建一个 MCP Server，实现 Tool 注册、资源暴露和 Prompt 模板', link: 'https://blog.csdn.net/m0_58782205', date: '02-28' },
+            { title: 'Canal + Kafka + ES：亿级数据实时同步方案实践', description: '基于 Canal 监听 MySQL binlog，经 Kafka 异步消峰，最终写入 Elasticsearch 实现搜索，完整踩坑记录与性能调优方案', link: 'https://blog.csdn.net/m0_58782205', date: '02-10' },
+            { title: 'PostgreSQL pgvector 向量检索性能调优指南', description: '深入 pgvector 索引机制，对比 IVFFlat 与 HNSW 的实际表现，分享百万级向量数据下的查询优化经验', link: 'https://blog.csdn.net/m0_58782205', date: '01-22' },
+            { title: '2025 年终总结：一名在读硕士的 AI Agent 探索之路', description: '回顾一年来的技术成长：从 Spring Boot 到 AI Agent，从个人项目到开源贡献，分享学习路径与未来规划', link: 'https://blog.csdn.net/m0_58782205', date: '01-05' }
+        ]);
+    } else {
+        fetch('/csdn_articles.json')
+            .then(function (res) { return res.ok ? res.json() : []; })
+            .then(renderTimeline)
+            .catch(function () { tl.innerHTML = '<span class="blog-soon-text">加载失败</span>'; });
     }
 
     function escapeHtml(str) {
@@ -175,4 +162,5 @@ document.addEventListener('DOMContentLoaded', function () {
         return div.innerHTML;
     }
 });
+
 

@@ -29,7 +29,7 @@ axios.get(url, {
   listItems.each((i, el) => {
     // 过滤掉 CSDN 自带的广告卡片
     if ($(el).attr('data-articleid') === undefined) return;
-    if (articles.length >= 3) return false; // 只取前 3 篇
+    if (articles.length >= 8) return false; // 取前 8 篇
 
     // 1. 提取标题与链接
     const titleEl = $(el).find('h4 a').first();
