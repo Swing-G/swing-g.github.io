@@ -114,41 +114,50 @@ document.addEventListener('DOMContentLoaded', function () {
     var coverImg = document.getElementById('blog-cover-img');
     if (!listEl || !coverImg) return;
 
-    fetch('./csdn_articles.json')
-        .then(function (res) { return res.json(); })
-        .then(function (articles) {
-            if (!articles.length) {
-                listEl.innerHTML = '<span class="blog-soon-text">暂无文章</span>';
-                return;
-            }
-            listEl.innerHTML = '';
+    function loadArticles(path) {
+        fetch(path)
+            .then(function (res) {
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                return res.json();
+            })
+            .then(function (articles) {
+                if (!articles.length || !articles[0].title || articles[0].title === '未命名文章') {
+                    listEl.innerHTML = '<span class="blog-soon-text">暂无文章</span>';
+                    return;
+                }
+                listEl.innerHTML = '';
+                showCover(coverImg, articles[0].coverImage);
 
-            // Default: show first article's cover (or placeholder)
-            showCover(coverImg, articles[0].coverImage);
+                articles.forEach(function (article, index) {
+                    var item = document.createElement('div');
+                    item.className = 'blog-item' + (index === 0 ? ' active' : '');
+                    item.innerHTML =
+                        '<div class="blog-item-title">' + escapeHtml(article.title) + '</div>' +
+                        '<div class="blog-item-desc">' + escapeHtml(article.description) + '</div>';
 
-            articles.forEach(function (article, index) {
-                var item = document.createElement('div');
-                item.className = 'blog-item' + (index === 0 ? ' active' : '');
-                item.innerHTML =
-                    '<div class="blog-item-title">' + escapeHtml(article.title) + '</div>' +
-                    '<div class="blog-item-desc">' + escapeHtml(article.description) + '</div>';
-
-                item.addEventListener('click', function () {
-                    window.open(article.link, '_blank', 'noopener noreferrer');
+                    item.addEventListener('click', function () {
+                        if (article.link) window.open(article.link, '_blank', 'noopener noreferrer');
+                    });
+                    item.addEventListener('mouseenter', function () {
+                        var items = listEl.querySelectorAll('.blog-item');
+                        items.forEach(function (el) { el.classList.remove('active'); });
+                        item.classList.add('active');
+                        showCover(coverImg, article.coverImage);
+                    });
+                    listEl.appendChild(item);
                 });
-                item.addEventListener('mouseenter', function () {
-                    var items = listEl.querySelectorAll('.blog-item');
-                    items.forEach(function (el) { el.classList.remove('active'); });
-                    item.classList.add('active');
-                    showCover(coverImg, article.coverImage);
-                });
-
-                listEl.appendChild(item);
+            })
+            .catch(function () {
+                // Fallback: try alternate path
+                if (path === '/csdn_articles.json') {
+                    loadArticles('csdn_articles.json');
+                } else {
+                    listEl.innerHTML = '<span class="blog-soon-text">加载失败</span>';
+                }
             });
-        })
-        .catch(function () {
-            listEl.innerHTML = '<span class="blog-soon-text">加载失败</span>';
-        });
+    }
+
+    loadArticles('/csdn_articles.json');
 
     function showCover(img, src) {
         if (src) {

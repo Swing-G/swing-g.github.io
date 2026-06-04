@@ -477,12 +477,18 @@ a:hover { text-decoration: underline; }
     position: relative;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
+    min-height: 180px;
 }
 .blog-cover img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    position: absolute;
+    top: 0; left: 0;
+}
+.blog-cover img[src=""], .blog-cover img:not([src]) {
+    display: none;
 }
 .blog-badge {
     position: absolute;
