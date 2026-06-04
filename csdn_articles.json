@@ -3,24 +3,30 @@
     "title": "智能体时代的降维打击：这5种工作流模式你认识几个？",
     "link": "https://blog.csdn.net/m0_58782205/article/details/161367378",
     "description": "本文深入探讨了AI Agentic时代的Workflow与Agent演进，对比了两种核心模式的适配差异，并重点拆解了5大经典Agentic Workflow模式",
-    "coverImage": "https://i-blog.csdnimg.cn/direct/5713aceaa12542c990614191f47e47e8.png",
-    "tags": ["技术分享"],
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
     "platform": "CSDN"
   },
   {
     "title": "GPT-6与DeepSeek V4巅峰对决：AI行业迎来全新变革",
     "link": "https://blog.csdn.net/m0_58782205/article/details/159964745",
-    "description": "2026年4月，AI领域迎来史诗级对决：OpenAI推出代号\"土豆\"的GPT-6，投入20亿美元打造AGI终极武器",
-    "coverImage": "https://i-blog.csdnimg.cn/direct/b4a89b30f382474db11ad6eb1c0fbc4a.png",
-    "tags": ["技术分享"],
+    "description": "2026年4月，AI领域迎来史诗级对决：OpenAI推出代号\"土豆\"的GPT-6，投入20亿美元打造AGI终极武器，采用革命性Symphony架构实现多模态底层",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
     "platform": "CSDN"
   },
   {
     "title": "龙虾智能体不是玩具！国家安全部提醒：这3个防护步骤必做",
     "link": "https://blog.csdn.net/m0_58782205/article/details/159172563",
-    "description": "OpenClaw（\"龙虾\"）作为2026年现象级开源AI智能体，凭借自主执行任务、插件扩展和持续进化的特性迅速流行",
-    "coverImage": "https://i-blog.csdnimg.cn/direct/998e804704b24b36aabccac716f8973e.png",
-    "tags": ["技术分享"],
+    "description": "摘要：OpenClaw（“龙虾”）作为2026年现象级开源AI智能体，凭借自主执行任务、插件扩展和持续进化的特性迅速流行。然而，其高权限操作和开放生态带来重大安",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
     "platform": "CSDN"
   }
 ]
