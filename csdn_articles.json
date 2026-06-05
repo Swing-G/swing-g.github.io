@@ -28,5 +28,55 @@
       "技术分享"
     ],
     "platform": "CSDN"
+  },
+  {
+    "title": "清华团队首发OpenClaw研究报告：AI智能体生态闭环全解析",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/159128787",
+    "description": "清华大学沈阳教授团队发布两份OpenClaw专项研究报告，系统梳理了这一AI智能体开源项目的发展脉络与应用前景。《OpenClaw发展研究报告1.0》构建了完整",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
+    "title": "【面试专栏｜Java并发编程】为什么多线程读多写少场景，优先选CopyOnWriteArrayList？原理详解",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/159128696",
+    "description": "本文深入解析了Java并发组件CopyOnWriteArrayList的核心原理与应用场景。通过“写时复制”机制，它在读多写少环境下实现了高效无锁读取和线程安全",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
+    "title": "【面试专栏｜Java并发编程】ConcurrentHashMap并发原理详解：JDK7 vs JDK8 核心对比",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/159128624",
+    "description": "本文深入解析了Java并发编程中的ConcurrentHashMap核心原理。首先对比了HashMap、Hashtable和ConcurrentHashMap的",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
+    "title": "霸榜的竟然是它！深度解析OpenClaw大模型基准测试结果",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/159086382",
+    "description": "本文解析了OpenClaw智能体框架大模型评测榜单PinchBench的核心维度，包括成功率、推理速度、运行成本和综合价值。榜单显示，Claude系列在成功率上",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
+    "title": "【面试专栏｜Java并发编程】Java 原子类全解：AtomicInteger、LongAdder 原理与适用场景",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/159086262",
+    "description": "Java原子类AtomicInteger和LongAdder是并发编程中的核心工具类。AtomicInteger基于CAS机制实现无锁原子操作，适用于低并发场景",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
   }
 ]
