@@ -108,6 +108,100 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// === Real-time GitHub Stars ===
+(function () {
+    var CACHE_KEY = 'gh-stars-cache';
+    var CACHE_TTL = 60 * 60 * 1000; // 1 hour
+
+    function formatStars(n) {
+        if (n >= 100000) return (n / 1000).toFixed(1) + 'K';
+        if (n >= 10000) return (n / 1000).toFixed(1) + 'K';
+        if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+        return String(n);
+    }
+
+    function loadCache() {
+        try {
+            var raw = localStorage.getItem(CACHE_KEY);
+            if (!raw) return {};
+            var data = JSON.parse(raw);
+            if (Date.now() - data._ts > CACHE_TTL) return {};
+            return data;
+        } catch (e) { return {}; }
+    }
+
+    function saveCache(data) {
+        try {
+            data._ts = Date.now();
+            localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+        } catch (e) { /* quota exceeded, ignore */ }
+    }
+
+    function fetchRepoStars(repo) {
+        return fetch('https://api.github.com/repos/' + repo, {
+            headers: { Accept: 'application/vnd.github.v3+json' }
+        })
+        .then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        })
+        .then(function (d) { return d.stargazers_count; });
+    }
+
+    function updateAll() {
+        var els = document.querySelectorAll('.gh-stars');
+        if (!els.length) return;
+
+        // deduplicate repos
+        var repos = [];
+        var seen = {};
+        els.forEach(function (el) {
+            var repo = el.getAttribute('data-repo');
+            if (repo && !seen[repo]) {
+                seen[repo] = true;
+                repos.push(repo);
+            }
+        });
+
+        var cache = loadCache();
+        var promises = repos.map(function (repo) {
+            if (typeof cache[repo] === 'number') {
+                return Promise.resolve({ repo: repo, stars: cache[repo] });
+            }
+            return fetchRepoStars(repo).then(function (stars) {
+                cache[repo] = stars;
+                return { repo: repo, stars: stars };
+            }).catch(function () {
+                return { repo: repo, stars: null };
+            });
+        });
+
+        Promise.all(promises).then(function (results) {
+            saveCache(cache);
+
+            // Build lookup
+            var lookup = {};
+            results.forEach(function (r) { lookup[r.repo] = r.stars; });
+
+            // Update all elements
+            els.forEach(function (el) {
+                var repo = el.getAttribute('data-repo');
+                var stars = lookup[repo];
+                if (typeof stars === 'number') {
+                    el.textContent = '⭐ ' + formatStars(stars);
+                }
+                // if null/undefined, keep hardcoded fallback
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateAll);
+    } else {
+        updateAll();
+    }
+})();
+
 // === Blog Timeline Loader ===
 document.addEventListener('DOMContentLoaded', function () {
     var tl = document.getElementById('blog-timeline');

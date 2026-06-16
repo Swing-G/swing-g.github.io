@@ -299,6 +299,25 @@ a:hover { text-decoration: underline; }
 .project-card h3, .os-card h3 { font-size: 17px; margin-bottom: 4px; padding-right: 80px; }
 .project-card p, .os-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5; }
 
+/* OS project title — monospace to match PR cards */
+.os-title {
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* Project card title — monospace for consistency */
+.project-title {
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+/* Utility: monospace font */
+.mono {
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+}
+
 /* Top-right stat badge */
 .card-stat {
     position: absolute;
@@ -385,8 +404,138 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================
-   Open Source (uses unified card styles above)
+   Open Source
    ============================================ */
+
+/* Sub-heading */
+.os-subhead {
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 28px 0 14px;
+}
+
+/* PR Stats row */
+.pr-stats {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+.pr-stats strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* PR Cards Grid */
+.pr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+/* PR Card */
+.pr-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.pr-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* PR Header: repo name + stars */
+.pr-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pr-repo {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+}
+.pr-stars {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* PR Title */
+.pr-title {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* PR Meta row */
+.pr-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* PR Status badges */
+.pr-status {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.status-open {
+    background: #fef3c7;
+    color: #92400e;
+}
+.status-merged {
+    background: #d1fae5;
+    color: #065f46;
+}
+.status-closed {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* PR Type tag */
+.pr-type {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 8px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    color: var(--text-secondary);
+    font-family: "SF Mono", "Fira Code", monospace;
+}
+
+/* PR Number link */
+.pr-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+}
+.pr-num:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* GH chart */
 .gh-chart {
     margin-top: 16px;
     text-align: center;
@@ -442,15 +591,41 @@ a:hover { text-decoration: underline; }
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
 }
+.exp-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* Logo */
+.exp-logo {
+    width: 70px; height: 48px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.exp-logo img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+/* Info */
+.exp-info { flex: 1; min-width: 0; }
 .exp-header {
     display: flex; justify-content: space-between; align-items: baseline;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 .exp-company { font-weight: 600; font-size: 16px; }
 .exp-date { font-size: 12px; color: var(--text-muted); }
-.exp-role { font-size: 14px; color: var(--accent); margin-bottom: 8px; }
-.exp-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6; }
+.exp-role { font-size: 14px; color: var(--accent); margin-bottom: 6px; }
+.exp-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.6; }
 
 /* ============================================
    Blog
@@ -527,6 +702,7 @@ a.blog-plat:hover .blog-logo {
 .blog-stats strong {
     color: var(--text);
     font-weight: 600;
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
 }
 .blog-stat-sep {
     margin: 0 8px;
@@ -585,25 +761,54 @@ a.blog-plat:hover .blog-logo {
 }
 
 /* ============================================
-   Status Screen
+   Status
    ============================================ */
-.status-list {
-    display: flex; flex-direction: column; gap: 16px;
+.status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
 }
-.status-item {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 16px;
-    color: var(--text-secondary);
+.status-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+.status-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.status-icon {
+    margin-bottom: 10px;
 }
 .status-dot {
-    width: 8px; height: 8px;
+    width: 12px; height: 12px;
     border-radius: 50%;
     display: inline-block;
-    flex-shrink: 0;
+    animation: pulse 2.5s ease-in-out infinite;
 }
 .status-dot.green { background: #22c55e; }
 .status-dot.yellow { background: #eab308; }
 .status-dot.blue { background: var(--accent); }
+
+.status-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.status-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
 
 /* ============================================
    Responsive
@@ -635,9 +840,10 @@ a.blog-plat:hover .blog-logo {
     .nav-item.active .nav-bar { width: 24px; }
 
     /* Grids to single column */
-    .project-grid, .os-grid { grid-template-columns: 1fr; }
+    .project-grid, .os-grid, .pr-grid, .status-grid { grid-template-columns: 1fr; }
     .paper-item { flex-direction: column; align-items: flex-start; gap: 8px; }
     .exp-header { flex-direction: column; gap: 4px; }
+    .exp-card { flex-direction: column; gap: 16px; }
 
     /* Terminal smaller */
     .terminal-window { font-size: 13px; }
