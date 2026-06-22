@@ -202,6 +202,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })();
 
+// === Last Updated Date ===
+(function () {
+    var el = document.getElementById('last-updated');
+    if (!el) return;
+
+    var dateStr = '';
+    if (document.lastModified) {
+        var d = new Date(document.lastModified);
+        if (!isNaN(d.getTime())) {
+            dateStr = d.getFullYear() + '-' +
+                String(d.getMonth() + 1).padStart(2, '0') + '-' +
+                String(d.getDate()).padStart(2, '0');
+        }
+    }
+    if (!dateStr) {
+        var today = new Date();
+        dateStr = today.getFullYear() + '-' +
+            String(today.getMonth() + 1).padStart(2, '0') + '-' +
+            String(today.getDate()).padStart(2, '0');
+    }
+    el.textContent = dateStr;
+})();
+
 // === Blog Timeline Loader ===
 document.addEventListener('DOMContentLoaded', function () {
     var tl = document.getElementById('blog-timeline');
