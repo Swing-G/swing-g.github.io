@@ -709,6 +709,15 @@ a.blog-plat:hover .blog-logo {
     color: var(--border);
 }
 
+/* Description / positioning */
+.blog-desc {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
 /* Timeline articles */
 .blog-timeline {
     background: var(--card-bg);
