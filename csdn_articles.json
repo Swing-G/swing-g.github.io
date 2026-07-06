@@ -1,5 +1,15 @@
 [
   {
+    "title": "Agent 到底是什么？从架构演进看 AI Agent 的工程定义",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/162638956",
+    "description": "AI Agent 的工程化演进：从循环执行到安全可控的持续系统 本文系统梳理了AI Agent的技术发展路径，将其划分为五个关键阶段： 初始阶段：LLM+循环（",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
     "title": "智能体时代的降维打击：这5种工作流模式你认识几个？",
     "link": "https://blog.csdn.net/m0_58782205/article/details/161367378",
     "description": "本文深入探讨了AI Agentic时代的Workflow与Agent演进，对比了两种核心模式的适配差异，并重点拆解了5大经典Agentic Workflow模式",
@@ -63,16 +73,6 @@
     "title": "霸榜的竟然是它！深度解析OpenClaw大模型基准测试结果",
     "link": "https://blog.csdn.net/m0_58782205/article/details/159086382",
     "description": "本文解析了OpenClaw智能体框架大模型评测榜单PinchBench的核心维度，包括成功率、推理速度、运行成本和综合价值。榜单显示，Claude系列在成功率上",
-    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
-    "tags": [
-      "技术分享"
-    ],
-    "platform": "CSDN"
-  },
-  {
-    "title": "【面试专栏｜Java并发编程】Java 原子类全解：AtomicInteger、LongAdder 原理与适用场景",
-    "link": "https://blog.csdn.net/m0_58782205/article/details/159086262",
-    "description": "Java原子类AtomicInteger和LongAdder是并发编程中的核心工具类。AtomicInteger基于CAS机制实现无锁原子操作，适用于低并发场景",
     "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
     "tags": [
       "技术分享"
