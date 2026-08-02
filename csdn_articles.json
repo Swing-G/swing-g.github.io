@@ -1,5 +1,15 @@
 [
   {
+    "title": "3 分钟上手 cc-connect：把 Claude Code 接入微信和飞书",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/163374076",
+    "description": "本文介绍了cc-connect工具，这是一个连接AI编程助手(如Claude Code、Codex等)与即时通讯软件(微信、飞书、钉钉等)的桥接器。通过cc-c",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
     "title": "Agent 到底是什么？从架构演进看 AI Agent 的工程定义",
     "link": "https://blog.csdn.net/m0_58782205/article/details/162638956",
     "description": "AI Agent 的工程化演进：从循环执行到安全可控的持续系统 本文系统梳理了AI Agent的技术发展路径，将其划分为五个关键阶段： 初始阶段：LLM+循环（",
@@ -63,16 +73,6 @@
     "title": "【面试专栏｜Java并发编程】ConcurrentHashMap并发原理详解：JDK7 vs JDK8 核心对比",
     "link": "https://blog.csdn.net/m0_58782205/article/details/159128624",
     "description": "本文深入解析了Java并发编程中的ConcurrentHashMap核心原理。首先对比了HashMap、Hashtable和ConcurrentHashMap的",
-    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
-    "tags": [
-      "技术分享"
-    ],
-    "platform": "CSDN"
-  },
-  {
-    "title": "霸榜的竟然是它！深度解析OpenClaw大模型基准测试结果",
-    "link": "https://blog.csdn.net/m0_58782205/article/details/159086382",
-    "description": "本文解析了OpenClaw智能体框架大模型评测榜单PinchBench的核心维度，包括成功率、推理速度、运行成本和综合价值。榜单显示，Claude系列在成功率上",
     "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
     "tags": [
       "技术分享"
