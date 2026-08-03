@@ -1,5 +1,25 @@
 [
   {
+    "title": "K3完整权重开放：比“榜单第一”更重要的，是顶级AI正在变得触手可及",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/163416056",
+    "description": "《Kimi K3：国产开放模型的新突破》摘要 Kimi K3的发布标志着国产开放权重模型首次接近全球顶级闭源AI（如Claude Opus 5、GPT-5.6）",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
+    "title": "架构和参数都没变，DeepSeek 的 Agent 能力为什么突然变强了？",
+    "link": "https://blog.csdn.net/m0_58782205/article/details/163415752",
+    "description": "DeepSeek-V4-Flash-0731模型虽未改变结构和参数量，但通过优化后训练（Post-training）显著提升了Agent能力，尤其在终端操作、代",
+    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
+    "tags": [
+      "技术分享"
+    ],
+    "platform": "CSDN"
+  },
+  {
     "title": "3 分钟上手 cc-connect：把 Claude Code 接入微信和飞书",
     "link": "https://blog.csdn.net/m0_58782205/article/details/163374076",
     "description": "本文介绍了cc-connect工具，这是一个连接AI编程助手(如Claude Code、Codex等)与即时通讯软件(微信、飞书、钉钉等)的桥接器。通过cc-c",
@@ -53,26 +73,6 @@
     "title": "清华团队首发OpenClaw研究报告：AI智能体生态闭环全解析",
     "link": "https://blog.csdn.net/m0_58782205/article/details/159128787",
     "description": "清华大学沈阳教授团队发布两份OpenClaw专项研究报告，系统梳理了这一AI智能体开源项目的发展脉络与应用前景。《OpenClaw发展研究报告1.0》构建了完整",
-    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
-    "tags": [
-      "技术分享"
-    ],
-    "platform": "CSDN"
-  },
-  {
-    "title": "【面试专栏｜Java并发编程】为什么多线程读多写少场景，优先选CopyOnWriteArrayList？原理详解",
-    "link": "https://blog.csdn.net/m0_58782205/article/details/159128696",
-    "description": "本文深入解析了Java并发组件CopyOnWriteArrayList的核心原理与应用场景。通过“写时复制”机制，它在读多写少环境下实现了高效无锁读取和线程安全",
-    "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
-    "tags": [
-      "技术分享"
-    ],
-    "platform": "CSDN"
-  },
-  {
-    "title": "【面试专栏｜Java并发编程】ConcurrentHashMap并发原理详解：JDK7 vs JDK8 核心对比",
-    "link": "https://blog.csdn.net/m0_58782205/article/details/159128624",
-    "description": "本文深入解析了Java并发编程中的ConcurrentHashMap核心原理。首先对比了HashMap、Hashtable和ConcurrentHashMap的",
     "coverImage": "https://g.csdnimg.cn/static/logo/favicon.reply.ico",
     "tags": [
       "技术分享"
